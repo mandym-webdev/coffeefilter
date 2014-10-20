@@ -1,3 +1,5 @@
+//adds auto-fill functionality and returns lat/lon to be used in search
+
 function initialize(search, lat, lon) {
   
   var input = /** @type {HTMLInputElement} */(
@@ -12,25 +14,27 @@ function initialize(search, lat, lon) {
     }
     var lat = place.geometry.location.k;
     var lon = place.geometry.location.B;
-    console.log(place)
+    // console.log(place)
     codeSearch(lat,lon);
   });
 
 }
 
+// accepts lat/lon from initialize and returns the coffee shops
+
 function codeSearch(lat, lon){
-  console.log("search")
-  console.log(lat, lon);
+  // console.log("search")
+  // console.log(lat, lon);
 
   var api = 'https://api.foursquare.com/v2/venues/explore?ll='+lat+','+lon+'&section=coffee&client_id=5NOGRN3BSR33DC0CKXTUUQ32OKJRYIQNIBNY5VMWOOJZZEEE&client_secret=TA3ETGDXOMORKDUIRAXVPV1NEV4Q4DXTSDZMFLPA0CLT5WGE&v=20141019';
-  console.log(api);
+  // console.log(api);
 
   $.ajax({
     url: api,
     dataType: "json",
       success: function(data) {
         venueList = data['response']['groups'][0]['items'];
-        console.log(venueList);
+        // console.log(venueList);
         
 
         for (var i = 0; i < 10; i++) {
@@ -38,7 +42,7 @@ function codeSearch(lat, lon){
           showAddress = venueList[i]['venue']['location']['address'];
           showWeb = venueList[i]['venue']['url'];
           showRating = venueList[i]['venue']['rating'];
-          console.log(showRating);
+          // console.log(showRating);
           $("#names").append('<span><a href="'+showWeb+'">'+showName+'</a></span><br><span>'+showAddress+'</span><br><span>Rating: '+showRating+'/10</span><br><br>')
           }
         $("#names").prepend('<h2>Get your fix here:</h2>')
