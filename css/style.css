@@ -1,1 +1,44 @@
-style.css
+body {
+  font-family: Roboto;
+  background-color: #4A2E24;
+  color: white;
+}
+
+#pac-input {
+  background-color: #fff;
+  padding: 0 11px 0 13px;
+  width: 400px;
+  font-size: 15px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+#pac-input:focus {
+  border-color: black;
+  margin-left: -1px;
+  padding-left: 14px;  /* Regular padding-left + 1. */
+  width: 401px;
+}
+
+h1, h2, p{
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+a {
+  color: #D69358;
+}
+
+input {
+  margin: 0 auto;
+}
+
+div {
+  width: 35%;
+  margin: 0 auto;
+  padding:0;
+}

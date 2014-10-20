@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Coffee Filter</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  
-  <form id="search">
-    <h1>Coffee Filter</h1>
-    <input type="search" id="search-name">
-    <input type="submit" value="Submit">
-    <p id="suggestion"></p>
-  </form>
-  
-  <div class="preview" id="preview"></div>
+  <head>
+    <title>Coffee Filter</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <script src="js/jquery.js"></script>
-  <script src="js/search.js"></script>
-</body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <script src="js/script.js"></script>
+  </head>  
+ 
+  <body>
+    <h1>Coffee Filter</h1>
+    <p>When you need a caffeine fix, we can help!</p>
+    <div>
+      <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    </div>
+    <div id="names"></div>
+
+    <script>
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </body>
 </html>
